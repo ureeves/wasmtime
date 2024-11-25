@@ -692,6 +692,14 @@ pub unsafe trait LinearMemory: Send + Sync + 'static {
     /// Return the allocated memory as a mutable pointer to u8.
     fn as_ptr(&self) -> *mut u8;
 
+    /// Returns `true` if the memory needs initialization.
+    ///
+    /// Returns `false` if the memory has already been initialized by some other
+    /// means, and initialization is not necessary.
+    fn needs_init(&self) -> bool {
+        true
+    }
+
     /// Returns the range of native addresses that WebAssembly can natively
     /// access from this linear memory, including guard pages.
     fn wasm_accessible(&self) -> Range<usize>;
