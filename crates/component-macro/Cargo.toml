@@ -29,7 +29,7 @@ wasmtime-wit-bindgen = { workspace = true }
 wit-parser = { workspace = true }
 
 [dev-dependencies]
-wasmtime = { path = '../wasmtime', features = ['component-model'] }
+wasmtime = { path = '../wasmtime', package = "ureeves-wasmtime", features = ['component-model'] }
 component-macro-test-helpers = { path = 'test-helpers' }
 tracing = { workspace = true }
 # For use with the custom attributes test

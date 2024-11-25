@@ -630,7 +630,7 @@ dependencies = [
  "anyhow",
  "arbitrary",
  "env_logger 0.11.5",
- "wasmtime",
+ "ureeves-wasmtime",
 ]
 
 [[package]]
@@ -1172,7 +1172,7 @@ version = "27.0.0"
 dependencies = [
  "anyhow",
  "dlmalloc",
- "wasmtime",
+ "ureeves-wasmtime",
 ]
 
 [[package]]
@@ -2033,7 +2033,7 @@ dependencies = [
  "anyhow",
  "libloading",
  "object",
- "wasmtime",
+ "ureeves-wasmtime",
 ]
 
 [[package]]
@@ -3135,7 +3135,7 @@ version = "0.0.0"
 dependencies = [
  "cargo_metadata",
  "heck 0.5.0",
- "wasmtime",
+ "ureeves-wasmtime",
  "wit-component",
 ]
 
@@ -3441,6 +3441,67 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8ecb6da28b8a351d773b68d5825ac39017e680750f980f3a1a85cd8dd28a47c1"
 
 [[package]]
+name = "ureeves-wasmtime"
+version = "27.0.0"
+dependencies = [
+ "addr2line",
+ "anyhow",
+ "async-trait",
+ "bitflags 2.6.0",
+ "bumpalo",
+ "cc",
+ "cfg-if",
+ "encoding_rs",
+ "env_logger 0.11.5",
+ "fxprof-processed-profile",
+ "gimli",
+ "hashbrown 0.14.3",
+ "indexmap 2.2.6",
+ "ittapi",
+ "libc",
+ "libm",
+ "log",
+ "mach2",
+ "memfd",
+ "object",
+ "once_cell",
+ "paste",
+ "postcard",
+ "proptest",
+ "psm",
+ "pulley-interpreter",
+ "rand",
+ "rayon",
+ "rustix",
+ "semver",
+ "serde",
+ "serde_derive",
+ "serde_json",
+ "smallvec",
+ "sptr",
+ "target-lexicon",
+ "tempfile",
+ "wasi-common",
+ "wasm-encoder",
+ "wasmparser",
+ "wasmtime-asm-macros",
+ "wasmtime-cache",
+ "wasmtime-component-macro",
+ "wasmtime-component-util",
+ "wasmtime-cranelift",
+ "wasmtime-environ",
+ "wasmtime-fiber",
+ "wasmtime-jit-debug",
+ "wasmtime-jit-icache-coherence",
+ "wasmtime-slab",
+ "wasmtime-versioned-export-macros",
+ "wasmtime-winch",
+ "wasmtime-wmemcheck",
+ "wat",
+ "windows-sys 0.59.0",
+]
+
+[[package]]
 name = "ureq"
 version = "2.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3597,8 +3658,8 @@ dependencies = [
  "tokio",
  "tracing",
  "tracing-subscriber",
+ "ureeves-wasmtime",
  "wasi-common",
- "wasmtime",
  "wiggle",
  "windows-sys 0.59.0",
 ]
@@ -3819,67 +3880,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "wasmtime"
-version = "27.0.0"
-dependencies = [
- "addr2line",
- "anyhow",
- "async-trait",
- "bitflags 2.6.0",
- "bumpalo",
- "cc",
- "cfg-if",
- "encoding_rs",
- "env_logger 0.11.5",
- "fxprof-processed-profile",
- "gimli",
- "hashbrown 0.14.3",
- "indexmap 2.2.6",
- "ittapi",
- "libc",
- "libm",
- "log",
- "mach2",
- "memfd",
- "object",
- "once_cell",
- "paste",
- "postcard",
- "proptest",
- "psm",
- "pulley-interpreter",
- "rand",
- "rayon",
- "rustix",
- "semver",
- "serde",
- "serde_derive",
- "serde_json",
- "smallvec",
- "sptr",
- "target-lexicon",
- "tempfile",
- "wasi-common",
- "wasm-encoder",
- "wasmparser",
- "wasmtime-asm-macros",
- "wasmtime-cache",
- "wasmtime-component-macro",
- "wasmtime-component-util",
- "wasmtime-cranelift",
- "wasmtime-environ",
- "wasmtime-fiber",
- "wasmtime-jit-debug",
- "wasmtime-jit-icache-coherence",
- "wasmtime-slab",
- "wasmtime-versioned-export-macros",
- "wasmtime-winch",
- "wasmtime-wmemcheck",
- "wat",
- "windows-sys 0.59.0",
-]
-
-[[package]]
 name = "wasmtime-asm-macros"
 version = "27.0.0"
 dependencies = [
@@ -3895,8 +3895,8 @@ dependencies = [
  "clap",
  "shuffling-allocator",
  "target-lexicon",
+ "ureeves-wasmtime",
  "wasi-common",
- "wasmtime",
  "wasmtime-cli-flags",
  "wasmtime-wasi-nn",
  "wat",
@@ -3920,7 +3920,7 @@ dependencies = [
  "log",
  "tokio",
  "tracing",
- "wasmtime",
+ "ureeves-wasmtime",
  "wasmtime-c-api-macros",
  "wasmtime-wasi",
  "wat",
@@ -4000,10 +4000,10 @@ dependencies = [
  "tokio",
  "toml",
  "tracing",
+ "ureeves-wasmtime",
  "walkdir",
  "wasi-common",
  "wasmparser",
- "wasmtime",
  "wasmtime-cache",
  "wasmtime-cli-flags",
  "wasmtime-component-util",
@@ -4034,7 +4034,7 @@ dependencies = [
  "humantime",
  "rayon",
  "tracing-subscriber",
- "wasmtime",
+ "ureeves-wasmtime",
 ]
 
 [[package]]
@@ -4051,7 +4051,7 @@ dependencies = [
  "similar",
  "syn 2.0.60",
  "tracing",
- "wasmtime",
+ "ureeves-wasmtime",
  "wasmtime-component-util",
  "wasmtime-wit-bindgen",
  "wit-parser",
@@ -4136,8 +4136,8 @@ dependencies = [
  "serde_derive",
  "serde_json",
  "target-lexicon",
+ "ureeves-wasmtime",
  "wasmprinter",
- "wasmtime",
  "wasmtime-environ",
 ]
 
@@ -4179,8 +4179,8 @@ dependencies = [
  "rand",
  "smallvec",
  "target-lexicon",
+ "ureeves-wasmtime",
  "wasmparser",
- "wasmtime",
  "wasmtime-fuzzing",
 ]
 
@@ -4199,6 +4199,7 @@ dependencies = [
  "rayon",
  "target-lexicon",
  "tempfile",
+ "ureeves-wasmtime",
  "v8",
  "wasm-encoder",
  "wasm-mutate",
@@ -4207,7 +4208,6 @@ dependencies = [
  "wasmi",
  "wasmparser",
  "wasmprinter",
- "wasmtime",
  "wasmtime-wast",
  "wat",
 ]
@@ -4280,8 +4280,8 @@ dependencies = [
  "tokio",
  "tracing",
  "tracing-subscriber",
+ "ureeves-wasmtime",
  "url",
- "wasmtime",
  "wiggle",
  "windows-sys 0.59.0",
 ]
@@ -4293,7 +4293,7 @@ dependencies = [
  "anyhow",
  "test-programs-artifacts",
  "tokio",
- "wasmtime",
+ "ureeves-wasmtime",
  "wasmtime-wasi",
 ]
 
@@ -4318,7 +4318,7 @@ dependencies = [
  "tokio-rustls",
  "tracing",
  "tracing-subscriber",
- "wasmtime",
+ "ureeves-wasmtime",
  "wasmtime-wasi",
  "webpki-roots",
 ]
@@ -4330,7 +4330,7 @@ dependencies = [
  "anyhow",
  "test-programs-artifacts",
  "tokio",
- "wasmtime",
+ "ureeves-wasmtime",
  "wasmtime-wasi",
 ]
 
@@ -4348,8 +4348,8 @@ dependencies = [
  "thiserror",
  "tracing",
  "tracing-subscriber",
+ "ureeves-wasmtime",
  "walkdir",
- "wasmtime",
  "wasmtime-wasi",
  "wiggle",
  "windows",
@@ -4362,8 +4362,8 @@ dependencies = [
  "anyhow",
  "log",
  "rand",
+ "ureeves-wasmtime",
  "wasi-common",
- "wasmtime",
  "wasmtime-wasi",
 ]
 
@@ -4373,7 +4373,7 @@ version = "27.0.0"
 dependencies = [
  "anyhow",
  "log",
- "wasmtime",
+ "ureeves-wasmtime",
  "wast 219.0.1",
 ]
 
@@ -4491,7 +4491,7 @@ dependencies = [
  "thiserror",
  "tokio",
  "tracing",
- "wasmtime",
+ "ureeves-wasmtime",
  "wiggle-macro",
  "wiggle-test",
  "witx",
