@@ -1,6 +1,6 @@
 [package]
 name = "ureeves-wasmtime"
-version.workspace = true
+version = "27.0.3"
 authors.workspace = true
 description = "High-level API to expose the Wasmtime runtime"
 documentation = "https://docs.rs/wasmtime"
