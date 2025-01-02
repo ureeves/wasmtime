@@ -704,6 +704,15 @@ impl Config {
         self
     }
 
+    /// Sets the enabled WebAssembly features directly.
+    ///
+    /// Keep in mind that the respective cargo features must be enabled to use them.
+    pub fn wasm_features(&mut self, flags: WasmFeatures) -> &mut Self {
+        self.enabled_features = flags;
+        self.disabled_features = flags.complement();
+        self
+    }
+
     fn wasm_feature(&mut self, flag: WasmFeatures, enable: bool) -> &mut Self {
         self.enabled_features.set(flag, enable);
         self.disabled_features.set(flag, !enable);
